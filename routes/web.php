@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PlanetController; 
+use App\Http\Controllers\UserController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -61,9 +63,9 @@ Route::get('/greeting', function () {
 });*/
 
 
-// Route::get('/planets', [PlanetController::class, 'index']);
-// Route::get('/planets/{planet}', [PlanetController::class, 'show']);
+Route::get('/planets', [PlanetController::class, 'index']);
+Route::get('/planets/{planet}', [PlanetController::class, 'show']);
 
-Route::get('/', function () {
-    return view('hello');
-});
+
+Route::get('/planetsdb', [UserController::class, 'index']);
+

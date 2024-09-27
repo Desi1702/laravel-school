@@ -1,4 +1,4 @@
-<!--<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Planets</title>
@@ -22,5 +22,4 @@
         <p>No planets found.</p>
     @endif
 </body>
-</html>*/
--->
+</html>

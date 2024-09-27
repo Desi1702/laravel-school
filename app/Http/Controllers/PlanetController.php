@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+
 
 class PlanetController extends Controller
 {
@@ -33,10 +36,14 @@ class PlanetController extends Controller
 
     public function show($planet)
     {
-        $planetDetail = collect($this->planets)->firstWhere('name', ucfirst(strtolower($planet)));
-        if (!$planetDetail) {
-            abort(404, 'Planet not found');
+        $planetDetails = collect($this->planets)->firstWhere('name', ucfirst($planet));
+ 
+        if ($planetDetails) {
+            return view('planets.show', ['planet' => $planetDetails]);
         }
-        return view('planets.show', compact('planetDetail'));
+ 
+        return response()->view('errors.404', [], 404);
     }
+
+    
 }
