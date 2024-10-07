@@ -6,10 +6,13 @@
     <title>Planets</title>
 </head>
 <body>
-    <h1>List of Planets</h1>
+    <h1>Planets</h1>
     <ul>
         @foreach($planets as $planet)
-            <li>{{ $planet->name }}</li> 
+            <li>
+                {{ $planet->name }}<br>{{$planet->description}}<br>size: {{$planet->size_in_km}} km
+            </li> 
+            <br>
         @endforeach
     </ul>
 </body>

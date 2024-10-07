@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Models\Planets;
+
+
 
 class UserController extends Controller
 {
     public function index()
     {
-        $planets = DB::table('planets')->get();  
+        $planets = Planets::all();
 
         return view('planets.dbindex', ['planets' => $planets]);
     }

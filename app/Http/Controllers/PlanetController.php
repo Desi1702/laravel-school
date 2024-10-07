@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 
 
+
 class PlanetController extends Controller
 {
     private $planets = [
