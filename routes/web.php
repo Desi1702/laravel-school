@@ -69,3 +69,28 @@ Route::get('/planets/{planet}', [PlanetController::class, 'show']);
 
 Route::get('/planetsdb', [UserController::class, 'index']);
 
+
+Route::get('/saturn', function () {
+    return view('planets.saturn');
+})->name('saturn');
+
+Route::get('/earth', function () {
+    return view('planets.earth');
+})->name('earth');
+
+Route::get('/venus', function () {
+    return view('planets.venus');
+})->name('venus');
+
+Route::get('/mars', function () {
+    return view('planets.mars');
+})->name('mars');
+
+Route::get('/jupiter', function () {
+    return view('planets.jupiter');
+})->name('jupiter');
+
+
+
+Route::get('/', [UserController::class, 'index'])->name('home');
+

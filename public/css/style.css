@@ -1,0 +1,401 @@
+
+/* Body and Background */
+body {
+    background-color: #0d0d2b; 
+    color: #e0e0ff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Star Background Animation */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/images/stars.jpg') repeat; 
+    opacity: 0.4;
+    z-index: -1;
+    animation: starryMove 100s linear infinite;
+}
+
+@keyframes starryMove {
+    from { background-position: 0 0; }
+    to { background-position: -2000px -2000px; }
+}
+
+/* Title */
+h1 {
+    font-size: 3rem;
+    color: #f8f8ff;
+    text-shadow: 0 0 15px #ffffff, 0 0 30px #c8c8ff;
+    margin-bottom: 1rem;
+}
+
+/* Navbar Styles */
+.navbar {
+   padding: 10px ;
+   padding-left: 150px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; 
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    margin: 0 15px; 
+}
+
+.navbar a {
+    color: #e0e0ff; 
+    text-decoration: none; 
+    font-weight: bold;
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    transition: background 0.3s, color 0.3s; 
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+    color: #ffffff; 
+}
+
+
+/* Planet List */
+ul {
+    list-style-type: none;
+    padding: 0;
+    width: 80%;
+    max-width: 800px;
+}
+
+/* Planet Item */
+li {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    color: #e1e1ff;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover Effects */
+li:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.6);
+}
+
+/* Text Styling */
+li span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #b0b0ff;
+}
+
+/* Collapsible Planet Item Styles */
+
+.planet-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+
+.planet-item:hover {
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
+}
+
+/* Header Style for Collapsible Toggle */
+.planet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    cursor: pointer;
+    color: #b0b0ff;
+    font-weight: bold;
+}
+
+.planet-header:hover {
+    color: #ffffff;
+}
+
+.toggle-icon {
+    font-size: 1.2rem;
+    color: #c8c8ff;
+    transition: transform 0.2s;
+}
+
+/* Collapsible Details */
+.planet-details {
+    padding: 15px 20px;
+    display: none; 
+    color: #d0d1ff;
+}
+
+
+/* Saturn Styles */
+body.saturn {
+    background-color: #2e2a1a;
+}
+
+body.saturn h1 {
+    color: #fff0b3; 
+    text-shadow: 0 0 10px #ffecb3, 0 0 25px #fffbcc; 
+}
+
+body.saturn .planet-section {
+    background-color: rgba(255, 240, 179, 0.1); 
+    border: 1px solid rgba(255, 240, 179, 0.3); 
+    box-shadow: 0px 0px 15px rgba(255, 240, 179, 0.2); 
+}
+
+/* Saturn Accent Colors */
+body.saturn .planet-header {
+    color: #ffd699; 
+}
+
+body.saturn .planet-details {
+    color: #ffe5cc; 
+}
+
+body.saturn .toggle-icon {
+    color: #ffebcc; 
+}
+
+.saturn-image {
+    width: 120px; 
+    height: auto;
+    margin-right: 10px;
+    border-radius: 50%; 
+    box-shadow: 0 0 10px rgba(255, 240, 179, 0.5); 
+    vertical-align: middle; 
+}
+
+/* Earth Styles */
+body.earth {
+    background-color: #1a1a3c; 
+}
+
+body.earth h1 {
+    color: #b3e0ff; 
+    text-shadow: 0 0 10px #a0d4ff, 0 0 25px #e0f7fa; 
+}
+
+body.earth .planet-section {
+    background-color: rgba(179, 224, 255, 0.1); 
+    border: 1px solid rgba(179, 224, 255, 0.3); 
+    box-shadow: 0px 0px 15px rgba(179, 224, 255, 0.2);
+}
+
+/* Earth Accent Colors for */
+body.earth .planet-header {
+    color: #88ccff; 
+}
+
+body.earth .planet-details {
+    color: #cceeff; 
+}
+
+body.earth .toggle-icon {
+    color: #b3e0ff; 
+}
+
+.earth-image {
+    width: 120px; 
+    height: auto;
+    margin-right: 10px;
+    border-radius: 50%; 
+    box-shadow: 0 0 10px rgba(179, 224, 255, 0.5); 
+    vertical-align: middle; 
+}
+
+/* Venus Styles */
+body.venus {
+    background-color: #3b1d1f; 
+}
+
+body.venus h1 {
+    color: #ffcccb;
+    text-shadow: 0 0 10px #ffb6b9, 0 0 25px #ff9e9e; 
+}
+
+body.venus .planet-section {
+    background-color: rgba(255, 204, 203, 0.1);
+    border: 1px solid rgba(255, 204, 203, 0.3); 
+    box-shadow: 0px 0px 15px rgba(255, 204, 203, 0.2);
+}
+
+/* Venus Accent Colors for */
+body.venus .planet-header {
+    color: #ffc1c1;
+    
+}
+
+body.venus .planet-details {
+    color: #ffd9d9; 
+}
+
+body.venus .toggle-icon {
+    color: #ffdfdf;
+}
+
+.venus-image {
+    width: 120px; 
+    height: auto;
+    margin-right: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 179, 128, 0.5);
+    vertical-align: middle;
+}
+
+/* Mars Styles */
+body.mars {
+    background-color: #3b0d0d; 
+}
+
+body.mars h1 {
+    color: #ffcccc; 
+    text-shadow: 0 0 10px #ffaaaa, 0 0 25px #ffdddd; 
+}
+
+body.mars .planet-section {
+    background-color: rgba(255, 204, 204, 0.1); 
+    border: 1px solid rgba(255, 204, 204, 0.3);
+    box-shadow: 0px 0px 15px rgba(255, 204, 204, 0.2);
+}
+
+/* Mars Accent Colors */
+body.mars .planet-header {
+    color: #ff9999; 
+}
+
+body.mars .planet-details {
+    color: #ffcccc; 
+}
+
+body.mars .toggle-icon {
+    color: #ffdddd; 
+}
+
+.mars-image {
+    width: 120px; 
+    height: auto;
+    margin-right: 10px;
+    border-radius: 50%; 
+    box-shadow: 0 0 10px rgba(255, 204, 204, 0.5); 
+    vertical-align: middle; 
+}
+
+/* Jupiter Styles */
+body.jupiter {
+    background-color: #2f2a18; 
+}
+
+body.jupiter h1 {
+    color: #ffddaa; 
+    text-shadow: 0 0 10px #ffe6bb, 0 0 25px #ffddaa; 
+}
+
+body.jupiter .planet-section {
+    background-color: rgba(255, 221, 170, 0.1); 
+    border: 1px solid rgba(255, 221, 170, 0.3);
+    box-shadow: 0px 0px 15px rgba(255, 221, 170, 0.2);
+}
+
+/* Jupiter Accent Colors */
+body.jupiter .planet-header {
+    color: #ffcc88; 
+}
+
+body.jupiter .planet-details {
+    color: #ffebcc; 
+}
+
+body.jupiter .toggle-icon {
+    color: #ffddbb;
+}
+
+.jupiter-image {
+    width: 120px;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 221, 170, 0.5);
+    vertical-align: middle;
+}
+
+/* Home Button Styles */
+.home-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.home-button:hover {
+    background-color: rgba(255, 255, 255, 0.4); 
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+/* Random Fact Generator Styling */
+.fact-generator {
+    margin: 20px auto;
+    padding: 15px;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    background-color: rgba(20, 20, 40, 0.8); /* Dark background */
+    width: 80%;
+    max-width: 750px;
+    color: #e0e0ff; /* Soft text color */
+}
+
+.fact-button {
+    background-color: rgba(209, 209, 255, 0.3); /* Transparent light blue */
+    color: #0d0d2b; /* Dark text for contrast */
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.fact-button:hover {
+    background-color: rgba(192, 192, 255, 0.8); /* Slightly darker transparent blue on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.fact-display {
+    margin-top: 15px;
+    font-size: 1.1em;
+    font-style: italic;
+    color: #d1d1ff; /* Softer color for text */
+    padding: 10px;
+}
+
+
